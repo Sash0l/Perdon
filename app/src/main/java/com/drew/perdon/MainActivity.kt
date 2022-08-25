@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MotionEvent
 import android.view.MotionEvent.ACTION_DOWN
-import java.util.*
 import kotlin.collections.HashMap
 
 private const val TAG = "MainActivity"
-private val soundPlayer = SoundPool.Builder().setMaxStreams(2).build()
+private val soundPlayer = SoundPool.Builder().setMaxStreams(1).build()
 private val soundsDictionary = HashMap<String, Int>()
 
 class MainActivity : AppCompatActivity() {
@@ -30,22 +29,12 @@ class MainActivity : AppCompatActivity() {
         return super.onTouchEvent(event)
     }
 
-    fun initializeSounds() {
-        soundsDictionary["tableSlap"] = soundPlayer.load(this, R.raw.table_slap, 2)
+    private fun initializeSounds() {
         soundsDictionary["perdonNegro"] = soundPlayer.load(this, R.raw.perdon_negro, 1)
         soundsDictionary["perdonBlanco"] = soundPlayer.load(this, R.raw.perdon_blanco, 1)
     }
 
-    fun playSound() {
-        soundPlayer.play(
-            soundsDictionary["tableSlap"]!!,
-            1f,
-            1f,
-            2,
-            0,
-            1f
-        )
-        Log.d(TAG, "Played tableSlap sound")
+    private fun playSound() {
         //if phone has dark theme enabled:
         soundPlayer.play(
             soundsDictionary["perdonNegro"]!!,
