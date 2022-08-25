@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Perdon</string>
     <string name="negro">negro!</string>
+    <string name="hand_above_table">Hand above table</string>
 </resources>
