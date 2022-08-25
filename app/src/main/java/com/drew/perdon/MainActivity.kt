@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     private fun initializeSounds() {
         soundsDictionary["perdonNegro"] = soundPlayer.load(this, R.raw.perdon_negro, 1)
         soundsDictionary["perdonBlanco"] = soundPlayer.load(this, R.raw.perdon_blanco, 1)
+        Log.d(TAG,"Sounds initialized")
     }
 
     private fun playSound() {
@@ -45,8 +46,6 @@ class MainActivity : AppCompatActivity() {
             1f
         )
         Log.d(TAG, "Played perdonNegro sound")
-        //if phone has light theme enabled:
-
-
+        //TODO: if phone has light theme enabled:
     }
 }
